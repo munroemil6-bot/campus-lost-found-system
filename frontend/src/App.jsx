@@ -1,16 +1,22 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
+import AdminDashboard from './pages/AdminDashboard'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import ItemCard from './components/ItemCard'
-import LoadingSpinner from './components/LoadingSpinner'
+import BrowseItems from './pages/BrowseItems'
+import ReportLost from './pages/ReportLost'
+import ReportFound from './pages/ReportFound'
+import MyClaims from './pages/MyClaims'
+import StudentDashboard from './pages/StudentDashboard'
 import './index.css'
+
+const Router = typeof window !== 'undefined' && window.location.hostname.includes('github.io') ? HashRouter : BrowserRouter
 
 export default function App() {
   return (
     <div className="min-h-screen bg-blue-950 text-slate-100">
-      <Router>
+      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Navbar />
 
         <main className="px-4 py-6 sm:px-6 lg:px-8">
@@ -18,9 +24,12 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/lost" element={<ItemCard />} />
-            <Route path="/found" element={<ItemCard />} />
-            <Route path="/submit" element={<ItemCard />} />
+            <Route path="/browse" element={<BrowseItems />} />
+            <Route path="/report/lost" element={<ReportLost />} />
+            <Route path="/report/found" element={<ReportFound />} />
+            <Route path="/claims" element={<MyClaims />} />
+            <Route path="/student-dashboard" element={<StudentDashboard />} />
+            <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </main>
 

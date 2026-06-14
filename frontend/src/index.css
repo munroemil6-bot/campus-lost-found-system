@@ -1,8 +1,38 @@
 @import "tailwindcss";
 
+<<<<<<< HEAD
 /* Global application styles using standard CSS syntax */
 :root {
   color-scheme: dark;
+=======
+/* Global application styles. */
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    font-family: system-ui, sans-serif;
+  }
+
+  body {
+    @apply min-h-screen bg-linear-to-br from-blue-950 via-blue-900 to-slate-950 text-slate-100 antialiased;
+    margin: 0;
+    background-color: #020617;
+  }
+
+  #root {
+    min-height: 100%;
+  }
+
+  a {
+    @apply text-amber-200 no-underline transition hover:text-amber-100;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+>>>>>>> 3aed8e33dd6f79a464ccf614d62f6e2ea7d962ef
 }
 
 html {

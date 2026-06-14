@@ -15,20 +15,11 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link className="rounded-full px-4 py-2 transition hover:bg-amber-300/15 hover:text-amber-100" to="/lost">
-            Lost Items
+          <Link className="rounded-full px-4 py-2 transition hover:bg-amber-300/15 hover:text-amber-100" to="/browse">
+            Browse
           </Link>
         </li>
-        <li>
-          <Link className="rounded-full px-4 py-2 transition hover:bg-amber-300/15 hover:text-amber-100" to="/found">
-            Found Items
-          </Link>
-        </li>
-        <li>
-          <Link className="rounded-full px-4 py-2 transition hover:bg-amber-300/15 hover:text-amber-100" to="/submit">
-            Submit Item
-          </Link>
-        </li>
+        
         <li>
           <Link className="rounded-full px-4 py-2 border border-amber-300/30 bg-blue-900/90 text-amber-100 transition hover:bg-blue-900" to="/login">
             Login
@@ -39,6 +30,7 @@ export default function Navbar() {
             Register
           </Link>
         </li>
+        {/* Admin link removed from public navbar; admin access is via login only */}
       </ul>
     </nav>
   )

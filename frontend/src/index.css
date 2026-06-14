@@ -1,39 +1,36 @@
 @import "tailwindcss";
 
-/* Global application styles. */
-@layer base {
-  :root {
-    color-scheme: dark;
-  }
-
-  html {
-    font-family: system-ui, sans-serif;
-  }
-
-  body {
-    @apply min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-slate-950 text-slate-100 antialiased;
-    margin: 0;
-    background-color: #020617;
-  }
-
-  #root {
-    min-height: 100%;
-  }
-
-  a {
-    @apply text-amber-200 no-underline transition hover:text-amber-100;
-  }
-
-  button {
-    @apply cursor-pointer;
-  }
+/* Global application styles using standard CSS syntax */
+:root {
+  color-scheme: dark;
 }
 
+html {
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  @apply min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-slate-950 text-slate-100 antialiased;
+  margin: 0;
+  background-color: #020617;
+}
+
+#root {
+  min-height: 100%;
+}
+
+a {
+  @apply text-amber-200 no-underline transition hover:text-amber-100;
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+/* Custom components in Tailwind v4 are just plain classes using @apply */
 .btn-gold {
   @apply rounded-full bg-amber-300 px-5 py-2 font-semibold text-blue-950 transition hover:bg-amber-200;
 }
 
-.sr-only {
-  @apply sr-only;
-}
-
+/* REMOVED: .sr-only { @apply sr-only; } */
+/* Tailwind already includes 'sr-only' natively. You do not need to redefine it! */

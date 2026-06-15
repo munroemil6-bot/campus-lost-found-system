@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { fetchItems, createClaim } from '../services/api'
+import { fetchItems } from '../services/api'
 import { navigateToRoute } from '../utils/navigation'
 
 export default function BrowseItems() {
@@ -191,7 +191,7 @@ function openClaimModal(item) {
   </div>`
 
   document.getElementById('clf-claim-cancel').onclick = () => { document.getElementById('clf-claim-modal')?.remove() }
-      document.getElementById('clf-claim-submit').onclick = async () => {
+  document.getElementById('clf-claim-submit').onclick = async () => {
     const name = document.getElementById('clf-claim-name').value
     const email = document.getElementById('clf-claim-email').value
     if (!name || !email) return alert('Please enter name and email')
@@ -205,7 +205,7 @@ function openClaimModal(item) {
         claimant_name: name,
         claimant_email: email,
       }
-      await createClaim(payload)
+      await (await import('../services/api')).createClaim(payload)
       alert('Claim submitted — admin will review it.')
       document.getElementById('clf-claim-modal')?.remove()
       localStorage.setItem('__clf_last_action', JSON.stringify({ type: 'claim_submitted', time: Date.now() }))

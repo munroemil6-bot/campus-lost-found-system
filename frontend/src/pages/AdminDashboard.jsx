@@ -44,7 +44,7 @@ export default function AdminDashboard() {
     },
   ]
 
-  useEffect(() => {
+    useEffect(() => {
     if (!user || !user.is_admin) {
       navigate('/login')
       return

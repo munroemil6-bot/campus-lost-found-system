@@ -2,7 +2,7 @@
 # Build the React app and serve it with Nginx.
 FROM node:20-bullseye AS builder
 WORKDIR /app
-ARG VITE_API_BASE_URL=http://localhost:8000
+ARG VITE_API_BASE_URL=https://campus-lost-found-system-backend.onrender.com
 ENV VITE_API_BASE_URL=${VITE_API_BASE_URL}
 COPY package.json package-lock.json* ./
 RUN npm ci --legacy-peer-deps

@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "VITE_API_BASE_URL=${VITE_API_BASE_URL:-http://localhost:8000} gh-pages -d dist",
+    "deploy": "VITE_API_BASE_URL=${VITE_API_BASE_URL:-https://campus-lost-found-system-backend.onrender.com} gh-pages -d dist",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",

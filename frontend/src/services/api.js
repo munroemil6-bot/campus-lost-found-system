@@ -88,8 +88,8 @@ function normalizeApiBaseUrl(url) {
   if (!url) return undefined
   return url
     .replace(/host\.docker\.internal/gi, 'localhost')
-    .replace(/https?:\/\/backend:8000/gi, 'https://campus-lost-found-system-backend.onrender.com')
-    .replace(/https?:\/\/localhost:8000/gi, 'https://campus-lost-found-system-backend.onrender.com')
+    .replace(/https?:\/\/backend:8000/gi, 'https://campus-lost-found-backend-x9di.onrender.com')
+    .replace(/https?:\/\/localhost:8000/gi, 'https://campus-lost-found-backend-x9di.onrender.com')
 }
 
 function isPrivateHost(hostname) {
@@ -97,7 +97,8 @@ function isPrivateHost(hostname) {
 }
 
 function getDefaultApiBaseUrl() {
-  return 'https://campus-lost-found-system-backend.onrender.com'
+  if (typeof window === 'undefined') return 'https://campus-lost-found-backend-x9di.onrender.com'
+  return 'https://campus-lost-found-backend-x9di.onrender.com'
 }
 
 const rawBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim()

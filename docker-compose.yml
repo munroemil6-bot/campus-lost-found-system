@@ -19,7 +19,7 @@ services:
     depends_on:
       - backend
     environment:
-      - VITE_API_BASE_URL=https://campus-lost-found-system-backend.onrender.com
+      - VITE_API_BASE_URL=http://localhost:8000
       # For LAN access from another device, replace localhost with the host machine IP:
       # - VITE_API_BASE_URL=http://192.168.1.100:8000
     volumes:
